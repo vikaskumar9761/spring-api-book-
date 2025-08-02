@@ -26,19 +26,18 @@ public class bookService {
         return list;
     }
 
-    //get single book
-    // public Book getABook(int id){
-    //     for(Book book:list){
-    //         if(book.getId()==id){
-    //             return book;
-    //         }
-    //     }
-    //     return null;
-    // }
-
+//get single book for this api
     public Book getBookById(int id){
         Book book=null;
         book=list.stream().filter(e ->e.getId()==id).findFirst().get( );
         return book;
     }
+
+    //add book for this api
+
+    public Book addBook(Book b){
+        list.add(b);
+        return b;
+    }
+
 }
